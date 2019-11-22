@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c27a5eb8-dbfb-48f9-9440-7b1951b32264" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/fr/esgi/kata/rpg/core/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/fr/esgi/kata/rpg/core/Characters.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/fr/esgi/kata/rpg/core/Characters.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/fr/esgi/kata/rpg/core/Faction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/katarpg.iml" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +111,7 @@
       <option name="presentableId" value="Default" />
       <updated>1574434177475</updated>
       <workItem from="1574434178775" duration="5193000" />
-      <workItem from="1574450376834" duration="603000" />
+      <workItem from="1574450376834" duration="961000" />
     </task>
     <servers />
   </component>
