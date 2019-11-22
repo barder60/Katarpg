@@ -19,10 +19,6 @@ public abstract class Characters {
         this.healStrength = 1;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public void setHealth(int health) {
         if (health <= 100) {
             this.health = health;
@@ -33,36 +29,30 @@ public abstract class Characters {
     }
 
     public void attack(Characters enemy) {
-
-/*      for(int i = 0; i < enemy.factions.size(); i++){
-            for(int j = 0; j < fa)
-        }*/
-
-        if (enemy.alive && this != enemy) {
+        if (enemy.alive && this != enemy && !this.isSameFaction(enemy)) {
             enemy.setHealth(enemy.health - this.attackStrength);
         }
     }
 
     public void heal(Characters poto){
-        poto.setHealth(poto.health + 1);
-        if (poto.health > 0) {
-            poto.alive = true;
+        if(this.isSameFaction(poto)) {
+            poto.setHealth(poto.health + this.healStrength);
+            if (poto.health > 0) {
+                poto.alive = true;
+            }
         }
     }
 
-    @Override
-    public String toString() {
-        return "Characters{" +
-                "name='" + name + '\'' +
-                ", health=" + health +
-                ", alive=" + alive +
-                ", attackStrength=" + attackStrength +
-                ", healStrength=" + healStrength +
-                '}';
-    }
+    private boolean isSameFaction(Characters player) {
+        for(int i = 0; i < player.factions.size(); i++){
+            for(int j = 0; j < this.factions.size(); j++) {
+                if(this.factions.get(j).equals(player.factions.get(j))){
+                    return true;
+                }
+            }
+        }
 
-    public int getAttackStrength() {
-        return attackStrength;
+        return false;
     }
 
     public void setAttackStrength(int attackStrength) {
@@ -74,12 +64,23 @@ public abstract class Characters {
     }
 
     public void addFaction(String faction){
-        if (this.factions.contains(faction)){
+        if (!this.factions.contains(faction)){
             this.factions.add(faction);
         }
     }
 
     public void removeFaction(String faction){
         this.factions.remove(faction);
+    }
+
+    @Override
+    public String toString() {
+        return "Characters{" +
+                "name='" + name + '\'' +
+                ", health=" + health +
+                ", alive=" + alive +
+                ", attackStrength=" + attackStrength +
+                ", healStrength=" + healStrength +
+                '}';
     }
 }
