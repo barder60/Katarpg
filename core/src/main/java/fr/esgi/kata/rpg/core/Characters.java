@@ -1,5 +1,7 @@
 package fr.esgi.kata.rpg.core;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Characters {
@@ -9,7 +11,7 @@ public abstract class Characters {
     private boolean alive;
     private int attackStrength;
     private int healStrength;
-    private List<String> factions;
+    private List<Faction> factions;
 
     public Characters(String name) {
         this.name = name;
@@ -17,6 +19,7 @@ public abstract class Characters {
         this.alive = true;
         this.attackStrength = 1;
         this.healStrength = 1;
+        this.factions = new ArrayList<Faction>();
     }
 
     public void setHealth(int health) {
@@ -34,8 +37,8 @@ public abstract class Characters {
         }
     }
 
-    public void heal(Characters poto){
-        if(this.isSameFaction(poto)) {
+    public void heal(Characters poto) {
+        if (this.isSameFaction(poto)) {
             poto.setHealth(poto.health + this.healStrength);
             if (poto.health > 0) {
                 poto.alive = true;
@@ -44,11 +47,17 @@ public abstract class Characters {
     }
 
     private boolean isSameFaction(Characters player) {
-        for(int i = 0; i < player.factions.size(); i++){
-            for(int j = 0; j < this.factions.size(); j++) {
-                if(this.factions.get(j).equals(player.factions.get(j))){
-                    return true;
-                }
+
+//        for (int i = 0; i < player.factions.size(); i++) {
+//            for (int j = 0; j < this.factions.size(); j++) {
+//                if (this.factions.get(j).equals(player.factions.get(i))) {
+//                    return true;
+//                }
+//            }
+//        }
+        for (int i = 0; i < player.factions.size(); i++) {
+            if (this.factions.contains(player.factions.get(i))) {
+                return true;
             }
         }
 
@@ -63,13 +72,14 @@ public abstract class Characters {
         this.healStrength = healStrength;
     }
 
-    public void addFaction(String faction){
-        if (!this.factions.contains(faction)){
+    public void addFaction(Faction faction) {
+
+        if (!this.factions.contains(faction)) {
             this.factions.add(faction);
         }
     }
 
-    public void removeFaction(String faction){
+    public void removeFaction(Faction faction) {
         this.factions.remove(faction);
     }
 
@@ -81,6 +91,7 @@ public abstract class Characters {
                 ", alive=" + alive +
                 ", attackStrength=" + attackStrength +
                 ", healStrength=" + healStrength +
+                ", factions=" + factions +
                 '}';
     }
 }

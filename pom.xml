@@ -11,6 +11,8 @@
     <modules>
         <module>cli</module>
         <module>core</module>
+        <module>test</module>
+        <module>dada</module>
     </modules>
 
 

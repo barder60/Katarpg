@@ -2,8 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c27a5eb8-dbfb-48f9-9440-7b1951b32264" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/fr/esgi/kata/rpg/core/Entity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/target/classes/fr/esgi/kata/rpg/core/Entity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/target/classes/fr/esgi/kata/rpg/core/Faction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/target/test-classes/fr/esgi/kata/rpg/core/CharacterTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cli/src/main/java/fr/esgi/kata/rpg/cli/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/cli/src/main/java/fr/esgi/kata/rpg/cli/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cli/target/classes/fr/esgi/kata/rpg/cli/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/cli/target/classes/fr/esgi/kata/rpg/cli/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/fr/esgi/kata/rpg/core/Characters.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/fr/esgi/kata/rpg/core/Characters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/fr/esgi/kata/rpg/core/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/fr/esgi/kata/rpg/core/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/fr/esgi/kata/rpg/core/Faction.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/fr/esgi/kata/rpg/core/Faction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/fr/esgi/kata/rpg/core/Characters.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/fr/esgi/kata/rpg/core/Characters.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,8 +48,9 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -51,7 +65,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.Application">
-    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Application" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="fr.esgi.kata.rpg.cli.Application" />
       <module name="cli" />
       <extension name="coverage">
@@ -94,11 +108,6 @@
       <item itemvalue="Application.Application" />
       <item itemvalue="Maven.katarpg [clean,package]" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Application" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -112,6 +121,7 @@
       <updated>1574434177475</updated>
       <workItem from="1574434178775" duration="5193000" />
       <workItem from="1574450376834" duration="961000" />
+      <workItem from="1574461080582" duration="10590000" />
     </task>
     <servers />
   </component>
@@ -123,7 +133,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

@@ -9,5 +9,5 @@ public class Entity extends Characters {
     }
 
     @Override
-    public void addFaction(String faction) {}
+    public void addFaction(Faction faction) {}
 }
