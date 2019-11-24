@@ -39,7 +39,12 @@ public abstract class Character {
     public void heal(Character poto) {
 
         if (this.isSameFaction(poto) || this.getFactions().isEmpty()){
-            poto.setHealth(poto.health + this.healStrength);
+            if (poto.getHealth() + this.getHealStrength() < 100) {
+                poto.setHealth(poto.health + this.healStrength);
+            } else {
+                poto.setHealth(100);
+            }
+
             if (poto.health > 0) {
                 poto.alive = true;
             }

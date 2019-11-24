@@ -30,12 +30,13 @@ public class MageTest {
     public void mage_should_heal_another_character_heal() {
         Warrior warrior = new Warrior("Barbar");
 
-
-        while(warrior.getAttackStrength() > 0) {
+        Assert.assertEquals(warrior.getHealth(), 100);
+        warrior.attack(warrior);
+        while(warrior.getAttackStrength() <= 0) {
             warrior.attack(warrior);
         }
         Assert.assertEquals(warrior.getHealth(), 100 - warrior.getAttackStrength());
         mage.heal(warrior);
-
+        Assert.assertTrue(warrior.getHealth() > 100 - warrior.getAttackStrength());
     }
 }
