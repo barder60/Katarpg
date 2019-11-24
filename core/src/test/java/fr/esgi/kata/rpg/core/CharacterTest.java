@@ -12,7 +12,8 @@ class CharacterTest {
 
     @BeforeEach
     void setUp() {
-        this.character = new Character("First") {};
+        this.character = new Character("First") {
+        };
     }
 
     @AfterEach
@@ -34,7 +35,8 @@ class CharacterTest {
 
     @Test
     public void character_should_attack_another_character_and_deal_1_and_not_deal_if_enemy_is_dead() {
-        Character enemy = new Character("Enemy") {};
+        Character enemy = new Character("Enemy") {
+        };
 
         character.attack(enemy);
         Assert.assertEquals(enemy.getHealth(), 99);
@@ -54,7 +56,8 @@ class CharacterTest {
 
     @Test
     public void character_should_heal_another_character_to_1_and_can_heal_itself() {
-        Character friend = new Character("Friend") {};
+        Character friend = new Character("Friend") {
+        };
 
         character.attack(friend);
         friend.attack(character);

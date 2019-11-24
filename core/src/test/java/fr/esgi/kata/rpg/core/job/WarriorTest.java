@@ -21,7 +21,7 @@ public class WarriorTest {
     public void warrior_should_attack_until_0_from_9_and_can_attack_himself() {
         Assert.assertEquals(warrior.getHealth(), 100);
         warrior.attack(warrior);
-        while(warrior.getAttackStrength() <= 0) {
+        while (warrior.getAttackStrength() <= 0) {
             warrior.attack(warrior);
         }
         Assert.assertEquals(warrior.getHealth(), 100 - warrior.getAttackStrength());
@@ -32,7 +32,7 @@ public class WarriorTest {
         Warrior anotherWarrior = new Warrior("Another");
 
         warrior.attack(anotherWarrior);
-        while(warrior.getAttackStrength() <= 0) {
+        while (warrior.getAttackStrength() <= 0) {
             warrior.attack(anotherWarrior);
         }
 

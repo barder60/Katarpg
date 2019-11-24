@@ -32,7 +32,7 @@ public class MageTest {
 
         Assert.assertEquals(warrior.getHealth(), 100);
         warrior.attack(warrior);
-        while(warrior.getAttackStrength() <= 0) {
+        while (warrior.getAttackStrength() <= 0) {
             warrior.attack(warrior);
         }
         Assert.assertEquals(warrior.getHealth(), 100 - warrior.getAttackStrength());
