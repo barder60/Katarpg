@@ -1,10 +1,9 @@
 package fr.esgi.kata.rpg.core;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Characters {
+public abstract class Character {
 
     private String name;
     private int health;
@@ -13,7 +12,7 @@ public abstract class Characters {
     private int healStrength;
     private List<Faction> factions;
 
-    public Characters(String name) {
+    public Character(String name) {
         this.name = name;
         this.health = 100;
         this.alive = true;
@@ -31,14 +30,15 @@ public abstract class Characters {
         }
     }
 
-    public void attack(Characters enemy) {
-        if (enemy.alive && this != enemy && !this.isSameFaction(enemy)) {
+    public void attack(Character enemy) {
+        if (enemy.alive && this != enemy && (!this.isSameFaction(enemy) || this.getFactions().isEmpty())) {
             enemy.setHealth(enemy.health - this.attackStrength);
         }
     }
 
-    public void heal(Characters poto) {
-        if (this.isSameFaction(poto)) {
+    public void heal(Character poto) {
+
+        if (this.isSameFaction(poto) || this.getFactions().isEmpty()){
             poto.setHealth(poto.health + this.healStrength);
             if (poto.health > 0) {
                 poto.alive = true;
@@ -46,15 +46,32 @@ public abstract class Characters {
         }
     }
 
-    private boolean isSameFaction(Characters player) {
+    public String getName() {
+        return name;
+    }
 
-//        for (int i = 0; i < player.factions.size(); i++) {
-//            for (int j = 0; j < this.factions.size(); j++) {
-//                if (this.factions.get(j).equals(player.factions.get(i))) {
-//                    return true;
-//                }
-//            }
-//        }
+    public int getHealth() {
+        return health;
+    }
+
+    public boolean isAlive() {
+        return alive;
+    }
+
+    public int getAttackStrength() {
+        return attackStrength;
+    }
+
+    public int getHealStrength() {
+        return healStrength;
+    }
+
+    public List<Faction> getFactions() {
+        return factions;
+    }
+
+    private boolean isSameFaction(Character player) {
+
         for (int i = 0; i < player.factions.size(); i++) {
             if (this.factions.contains(player.factions.get(i))) {
                 return true;
@@ -85,7 +102,7 @@ public abstract class Characters {
 
     @Override
     public String toString() {
-        return "Characters{" +
+        return "Character{" +
                 "name='" + name + '\'' +
                 ", health=" + health +
                 ", alive=" + alive +

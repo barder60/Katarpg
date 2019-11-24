@@ -1,6 +1,8 @@
 package fr.esgi.kata.rpg.cli;
 
 import fr.esgi.kata.rpg.core.*;
+import fr.esgi.kata.rpg.core.job.Mage;
+import fr.esgi.kata.rpg.core.job.Warrior;
 
 public class Application {
     public static void main(String[] args) {

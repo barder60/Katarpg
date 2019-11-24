@@ -1,8 +1,10 @@
-package fr.esgi.kata.rpg.core;
+package fr.esgi.kata.rpg.core.job;
+
+import fr.esgi.kata.rpg.core.Character;
 
 import java.util.Random;
 
-public class Mage extends Characters {
+public class Mage extends Character {
 
     public Mage(String name) {
         super(name);
@@ -10,7 +12,7 @@ public class Mage extends Characters {
     }
 
     @Override
-    public void heal(Characters poto) {
+    public void heal(Character poto) {
         Random rand = new Random();
         this.setHealStrength(rand.nextInt(6) + 5);
         super.heal(poto);

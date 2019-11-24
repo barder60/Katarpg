@@ -1,6 +1,6 @@
 package fr.esgi.kata.rpg.core;
 
-public class Entity extends Characters {
+public class Entity extends Character {
 
     public Entity(String name) {
         super(name);
