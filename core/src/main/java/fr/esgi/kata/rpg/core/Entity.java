@@ -10,4 +10,11 @@ public class Entity extends Character {
 
     @Override
     public void addFaction(Faction faction) {}
+
+    @Override
+    public void setHealth(int health) {
+        if (health < this.getHealth()) {
+            super.setHealth(health);
+        }
+    }
 }
