@@ -7,26 +7,16 @@ import org.testng.Assert;
 
 public class FactionTest {
 
-    Character character;
+    Faction faction;
 
     @BeforeEach
     public void setUp() {
-        character = new Character("First") {
-        };
+        faction = new Faction("1st Faction");
     }
 
     @AfterEach
     public void tearDown() {
-        character = null;
+        faction = null;
     }
 
-    @Test
-    public void new_character_should_not_belong_to_any_faction() {
-        Assert.assertTrue(character.getFactions().isEmpty());
-    }
-
-    @Test
-    public void new_character_should_join_and_leave_faction() {
-
-    }
 }
