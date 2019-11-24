@@ -75,7 +75,7 @@ public abstract class Character {
         return factions;
     }
 
-    private boolean isSameFaction(Character player) {
+    public boolean isSameFaction(Character player) {
 
         for (int i = 0; i < player.factions.size(); i++) {
             if (this.factions.contains(player.factions.get(i))) {

@@ -51,6 +51,4 @@ public class EntityTest {
         entity.addFaction(faction);
         Assert.assertTrue(entity.getFactions().isEmpty());
     }
-
-    
 }

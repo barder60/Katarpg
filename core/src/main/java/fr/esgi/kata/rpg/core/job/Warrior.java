@@ -14,7 +14,7 @@ public class Warrior extends Character {
     public void attack(Character enemy) {
         Random rand = new Random();
         this.setAttackStrength(rand.nextInt(9));
-        if (enemy.isAlive()) {
+        if (enemy.isAlive() && (this == enemy || !this.isSameFaction(enemy))) {
             enemy.setHealth(enemy.getHealth() - this.getAttackStrength());
         }
     }
