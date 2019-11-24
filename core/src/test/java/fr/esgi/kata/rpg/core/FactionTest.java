@@ -7,7 +7,7 @@ import org.testng.Assert;
 
 public class FactionTest {
 
-    Faction faction;
+    private Faction faction;
 
     @BeforeEach
     public void setUp() {

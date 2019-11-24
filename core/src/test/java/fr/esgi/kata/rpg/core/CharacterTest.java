@@ -5,10 +5,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.testng.Assert;
 
-import static org.junit.jupiter.api.Assertions.fail;
-
 class CharacterTest {
-    Character character;
+    private Character character;
 
     @BeforeEach
     void setUp() {
@@ -87,7 +85,8 @@ class CharacterTest {
 
     @Test
     public void character_can_t_damage_another_character_of_same_faction() {
-        Character brotherFaction = new Character("Bro"){};
+        Character brotherFaction = new Character("Bro") {
+        };
         var faction = new Faction("1st faction");
 
         character.addFaction(faction);
@@ -99,9 +98,12 @@ class CharacterTest {
         Assert.assertEquals(brotherFaction.getHealth(), 100);
     }
 
-    @Test void character_can_only_heal_character_of_same_faction() {
-        Character brotherFaction = new Character("Bro"){};
-        Character notBro = new Character("No Bro") {};
+    @Test
+    public void character_should_only_heal_character_of_same_faction() {
+        Character brotherFaction = new Character("Bro") {
+        };
+        Character notBro = new Character("No Bro") {
+        };
         var faction = new Faction("The faction");
         var enemyFaction = new Faction("The enemyFaction");
 
@@ -112,7 +114,8 @@ class CharacterTest {
         notBro.attack(brotherFaction);
         notBro.attack(character);
         brotherFaction.attack(notBro);
-        Assert.assertTrue(brotherFaction.getHealth() < 100 && character.getHealth() < 100);
+        Assert.assertEquals(brotherFaction.getHealth(), 99);
+        Assert.assertEquals(character.getHealth(), 99);
         Assert.assertEquals(notBro.getHealth(), 99);
 
         brotherFaction.heal(notBro);
@@ -122,4 +125,5 @@ class CharacterTest {
         brotherFaction.heal(character);
         Assert.assertEquals(character.getHealth(), 100);
     }
+
 }

@@ -5,7 +5,7 @@ import org.testng.Assert;
 
 public class MageTest {
 
-    Mage mage;
+    private Mage mage;
 
     @BeforeEach
     public void setUp() {

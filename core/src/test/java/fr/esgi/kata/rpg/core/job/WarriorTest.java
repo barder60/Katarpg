@@ -5,7 +5,7 @@ import org.junit.jupiter.api.*;
 import org.testng.Assert;
 
 public class WarriorTest {
-    Warrior warrior;
+    private Warrior warrior;
 
     @BeforeEach
     public void setUp() {
